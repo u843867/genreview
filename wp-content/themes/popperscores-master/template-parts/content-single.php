@@ -13,6 +13,19 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		
+                <?php 
+			if ( $first_post == true ) {
+				the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+			} else {
+				the_title( '<h1 class="entry-title">', '</h1>' ); 
+			}
+		
+		?>
+            
+            		<div class="entry-meta">
+			<?php popperscores_posted_on(); ?>
+		</div><!-- .entry-meta -->
+            
 		<?php 
 		if ( has_post_thumbnail() ) { ?>
 			<figure class="featured-image">
@@ -28,14 +41,7 @@
 		<?php }
 		?>
 		
-		<?php 
-			if ( $first_post == true ) {
-				the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
-			} else {
-				the_title( '<h1 class="entry-title">', '</h1>' ); 
-			}
-		
-		?>
+
 
 		<?php
 		if ( has_excerpt( $post->ID ) ) {
@@ -45,9 +51,8 @@
 		}
 		?>
 		
-		<div class="entry-meta">
-			<?php popperscores_posted_on(); ?>
-		</div><!-- .entry-meta -->
+		
+                
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">

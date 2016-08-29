@@ -53,9 +53,14 @@ get_header(); ?>
 			<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
 		<?php endif; ?>
+                    
+                    
 
 		</main><!-- #main -->
+                
+               
+                
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
+ <?php get_sidebar(); ?>
 <?php get_footer(); ?>
